@@ -6,6 +6,11 @@ const cors = require('cors')
 
 const app = express()
 const port = 3005
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  optionsSuccessStatus: 200
+}
+
 
 require('dotenv').config()
 
@@ -14,7 +19,7 @@ mongoose
     .then((res) => console.log('Connected to Mongo DB'))
     .catch(error => console.log(error))
 
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(
     '/graphql',
     graphqlHTTP(async (request, response, graphQLParams) => ({
