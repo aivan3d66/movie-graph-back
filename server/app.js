@@ -6,7 +6,7 @@ const cors = require('cors')
 
 const app = express()
 const port = process.env.PORT || 3005
-const uri = process.env.REACT_APP_MONGO_URL || '---'
+const uri = process.env.REACT_APP_MONGO_URL
 
 require('dotenv').config()
 
