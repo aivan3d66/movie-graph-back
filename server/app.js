@@ -15,7 +15,7 @@ mongoose
     .catch(error => console.log(error))
 
 app.use(cors())
-app.get(
+app.use(
     '/graphql',
     graphqlHTTP(async (request, response, graphQLParams) => ({
         schema: schema,
