@@ -27,6 +27,6 @@ const dbConnection = mongoose.connection
 dbConnection.on('error', err => console.log(`Connection error: ${err}`))
 dbConnection.once('open', () => console.log('Connected to DB!'))
 
-app.listen('https://movie-graph-server.herokuapp.com', err => {
+app.listen(port, err => {
     err ? console.log(err) : console.log('Server started!')
 })
