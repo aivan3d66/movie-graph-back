@@ -10,7 +10,7 @@ const port = 3005
 require('dotenv').config()
 
 mongoose
-    .connect('mongodb+srv://aivan3d66:123qwe@cluster0.idipw.mongodb.net/graphql?retryWrites=true&w=majority')
+    .connect(process.env.REACT_APP_MONGO_URL)
     .then((res) => console.log('Connected to Mongo DB'))
     .catch(error => console.log(error))
 
