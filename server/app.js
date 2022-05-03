@@ -5,12 +5,13 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 
 const app = express()
-const port = 3005
+const port = process.env.PORT || 3005
+const uri = process.env.REACT_APP_MONGO_URL || '---'
 
 require('dotenv').config()
 
 mongoose
-    .connect(process.env.REACT_APP_MONGO_URL)
+    .connect(uri)
     .then((res) => console.log('Connected to Mongo DB'))
     .catch(error => console.log(error))
 
